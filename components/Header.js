@@ -26,6 +26,8 @@ function Header() {
     span.classList.add('date');
     span2.classList.add('temp');
 
+    // Content 
+
     span.textContent = `MARCH 28, 2020`
     h1.textContent = `Lambda Times`
     span2.textContent = '98°'
@@ -33,4 +35,15 @@ function Header() {
     // Append
 
     div.append(span, h1, span2);
+
+    // Return
+
+    return div;
 }
+
+
+const headerContainer = document.querySelector('.header-container')
+
+headerContainer.append(Header())
+
+
