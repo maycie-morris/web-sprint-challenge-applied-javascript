@@ -51,8 +51,10 @@ function cardMaker(object) {
     // Append
 
     imgContainer.appendChild(img);
-    author.appendChild(imgContainer);
-    card.appendChild(headline, author, span);
+    author.append(imgContainer, span);
+    card.append(headline, author);
+    
+    
 
     // Event Listener
 
