@@ -52,8 +52,7 @@ function cardMaker(object) {
 
     imgContainer.appendChild(img);
     author.appendChild(imgContainer);
-    headline.append(author, span);
-    card.appendChild(headline);
+    card.appendChild(headline, author, span);
 
     return card
 
@@ -62,5 +61,51 @@ function cardMaker(object) {
 const cardEntries = document.querySelector('.cards-container')
 
 myAxios.then(response => {
-
+    response.data.articles.bootstrap.forEach(article => {
+        const articleCreator = cardMaker(article)
+        cardEntries.appendChild(articleCreator)
+    })
 })
+.catch(err => {
+    console.log('Error!', err)
+});
+
+myAxios.then(response => {
+    response.data.articles.javascript.forEach(article => {
+        const articleCreator = cardMaker(article)
+        cardEntries.appendChild(articleCreator)
+    })
+})
+.catch(err => {
+    console.log('Error!', err)
+});
+
+myAxios.then(response => {
+    response.data.articles.jquery.forEach(article => {
+        const articleCreator = cardMaker(article)
+        cardEntries.appendChild(articleCreator)
+    })
+})
+.catch(err => {
+    console.log('Error!', err)
+});
+
+myAxios.then(response => {
+    response.data.articles.node.forEach(article => {
+        const articleCreator = cardMaker(article)
+        cardEntries.appendChild(articleCreator)
+    })
+})
+.catch(err => {
+    console.log('Error!', err)
+});
+
+myAxios.then(response => {
+    response.data.articles.technology.forEach(article => {
+        const articleCreator = cardMaker(article)
+        cardEntries.appendChild(articleCreator)
+    })
+})
+.catch(err => {
+    console.log('Error!', err)
+});
